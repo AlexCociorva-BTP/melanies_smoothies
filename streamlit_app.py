@@ -19,7 +19,7 @@ from snowflake.snowpark.functions import col
 
 #st.write('Your favourite fruit is:', option)
 
-import streamlit as st
+#import streamlit as st
 
 name_on_order = st.text_input('Name on Smoothie')
 st.write('The name on your Smoothie will be: ', name_on_order)
@@ -55,7 +55,7 @@ if ingredients_list:
       
         st.subheader(fruit_chosen + ' Nutrition Information')
         smoothiefroot_response = requests.get(f"https://my.smoothiefroot.com/api/fruit/{search_on}")  
-        sf_df = st.dataframe(data=smoothiefroot_response.json(), width='stretch')
+        sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
     st.write(ingredients_string)
 
